@@ -46,9 +46,8 @@ paths.forEach( (path) => {
         ppp = `${path}/${a}'/${x}/${i}`; 
 
         // Get private key...
-        privkey = root.derivePath(ppp).privateKey;
-
-        console.log(ppp, address.address, newone.address, privkey.toString('hex'))
+        privkey = root.derivePath(ppp).toWIF();
+        console.log(ppp, address.address, newone.address, privkey)
 
         if( address.address == search || newone.address == search ) {
           found = true;
